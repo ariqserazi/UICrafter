@@ -76,6 +76,7 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src --ext ts",
+    "package": "vsce package --allow-missing-repository",
     "vscode:prepublish": "npm run compile"
   },
   "devDependencies": {
@@ -84,6 +85,7 @@
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
     "eslint": "^8.57.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "@vscode/vsce": "^2.32.0"
   }
 }
