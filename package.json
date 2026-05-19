@@ -1,0 +1,88 @@
+{
+  "name": "uicrafter",
+  "displayName": "UICrafter",
+  "description": "Generate, preview, customize, and insert reusable UI designs directly inside VS Code.",
+  "version": "0.1.0",
+  "publisher": "uicrafter",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:uicrafter.sidebar",
+    "onCommand:uicrafter.open",
+    "onCommand:uicrafter.openPreview",
+    "onCommand:uicrafter.insertAtCursor",
+    "onCommand:uicrafter.replaceSelection",
+    "onCommand:uicrafter.createComponentFile",
+    "onCommand:uicrafter.copyGeneratedCode",
+    "onCommand:uicrafter.refreshTemplates"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "uicrafter.open",
+        "title": "UICrafter: Open"
+      },
+      {
+        "command": "uicrafter.openPreview",
+        "title": "UICrafter: Open Full Preview"
+      },
+      {
+        "command": "uicrafter.insertAtCursor",
+        "title": "UICrafter: Insert at Cursor"
+      },
+      {
+        "command": "uicrafter.replaceSelection",
+        "title": "UICrafter: Replace Selection"
+      },
+      {
+        "command": "uicrafter.createComponentFile",
+        "title": "UICrafter: Create Component File"
+      },
+      {
+        "command": "uicrafter.copyGeneratedCode",
+        "title": "UICrafter: Copy Generated Code"
+      },
+      {
+        "command": "uicrafter.refreshTemplates",
+        "title": "UICrafter: Refresh Templates"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "uicrafter",
+          "title": "UICrafter",
+          "icon": "media/uicrafter.svg"
+        }
+      ]
+    },
+    "views": {
+      "uicrafter": [
+        {
+          "id": "uicrafter.sidebar",
+          "name": "UICrafter"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "@types/vscode": "^1.90.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.3"
+  }
+}
